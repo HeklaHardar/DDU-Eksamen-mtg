@@ -15,15 +15,11 @@ session_start();
   </head>
   <body>
 <?php
+require 'logincheck.php';
 require 'navbar.php';
-if (isset($_SESSION['logincheck'])) {
 
   require 'forside.php';
 
-}else {
-  echo "logget ind";
-  require 'login.php';
-}
 
 
 

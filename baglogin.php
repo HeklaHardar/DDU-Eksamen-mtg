@@ -21,6 +21,7 @@ if ($_POST) {
         $_SESSION['brugerid']=$checklogin_result['Brugerid'];
         $_SESSION['logincheck']= "yep";
         echo "logget ind";
+        header('location: index.php');
       }else {
         echo "Forkert password";
       }
