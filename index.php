@@ -17,10 +17,36 @@ session_start();
 <?php
 require 'logincheck.php';
 require 'navbar.php';
+?>
 
-  require 'forside.php';
+ <div class="container">
+   <div class="row">
+     <div class="col-sm">
 
 
+       <!--kolonne nr 1 -->
+     </div>
+
+     <div class="col-sm-4">
+       <!--kolonne nr 2 -->
+       <h1>Mtg-Stats</h1>
+       Mtg-Stats er en side hvor du kan gemme dine resultater fra Magic: the Gathering turneringer og enkelte matches
+       <?php
+
+       echo "forside";
+
+        ?>
+     </div>
+
+     <div class="col-sm">
+
+
+       <!--kolonne nr 3 -->
+     </div>
+   </div>
+ </div>
+
+<?php
 
 
 

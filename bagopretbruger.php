@@ -2,10 +2,6 @@
 require("dbconnect.php");
 require("testinput.php");
 
-echo "hejhej";
-if ($_POST) {
-  echo "der er post!!";
-}
 if ($_POST) {
   if (ctype_alnum($_POST['brugernavn']) && ctype_alnum($_POST['password1']) && ctype_alnum($_POST['password2'])){
 $brugernavn= test_input($_POST['brugernavn']);
@@ -28,10 +24,18 @@ $hash = password_hash($password1, PASSWORD_DEFAULT);
       $brugeropret_query=mysqli_query($dbconnect, $indtast_sql);
 
       if($brugeropret_query){
-          echo "Din bruger er blevet oprettet";
+          ?>
+              <div class="alert alert-success" role="alert">
+            Din bruger er blevet oprettet
+              </div>
+          <?php
 
         } else{
-          echo "Der skete en fejl";
+          ?>
+              <div class="alert alert-danger" role="alert">
+            Der skete en fejl
+              </div>
+          <?php
         }
 
 
@@ -41,7 +45,11 @@ $hash = password_hash($password1, PASSWORD_DEFAULT);
 
 
       }else {
-      echo "Dit password matcher ikke dit kontrolpassword";
+      ?>
+          <div class="alert alert-danger" role="alert">
+        Dit password matcher ikke dit kontrolpassword
+          </div>
+      <?php
     }
 
 
@@ -49,13 +57,20 @@ $hash = password_hash($password1, PASSWORD_DEFAULT);
 
   }
   else{
-    //Hvis vi fik nogle rækker ud af vores database så giver vi brugeren ef fejl, da det begtyder at brygernavnet er optaget.
-    echo "<p>Dit brugernavn er optaget, vælg venligst et nyt</p>";
-
-
+    //Hvis vi fik nogle rækker ud af vores database så giver vi brugeren ef fejl, da det betyder at brygernavnet er optaget.
+?>
+    <div class="alert alert-danger" role="alert">
+  Dit brugernavn er optaget, vælg venligst et nyt
+    </div>
+<?php
 }
 }else {
-  echo "Brug venligst kun bogstaver og tal";
+
+  ?>
+      <div class="alert alert-danger" role="alert">
+    Brug venligst kun bogstaver og tal
+      </div>
+  <?php
 }
 }
 ?>

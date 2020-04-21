@@ -2,7 +2,6 @@
 require 'dbconnect.php';
 require 'testinput.php';
 if ($_POST) {
-  echo "post";
   if (ctype_alnum($_POST['brugernavn']) && ctype_alnum($_POST['password'])){
     $brugernavn=test_input($_POST['brugernavn']);
     $password=test_input($_POST['password']);
@@ -23,13 +22,25 @@ if ($_POST) {
         echo "logget ind";
         header('location: index.php');
       }else {
-        echo "Forkert password";
+        ?>
+            <div class="alert alert-danger" role="alert">
+          Forkert password
+            </div>
+        <?php
       }
     } else {
-      echo "Forkert brugernavn";
+      ?>
+          <div class="alert alert-danger" role="alert">
+        Forkert brugernavn
+          </div>
+      <?php
     }
   }else {
-    echo "Brug venligst kun bogstaver og tal";
+    ?>
+        <div class="alert alert-danger" role="alert">
+      Brug venligst kun bogstaver og tal
+        </div>
+    <?php
   }
 }
 ?>

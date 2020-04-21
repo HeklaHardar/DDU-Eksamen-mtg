@@ -1,0 +1,21 @@
+Decks:
+Se decklists oversigt --> get for at vise enkelt decklist
+Opret decklist (Deckid, decknavn, tekstfelt til kort) 
+
+
+
+Start turnering 
+Form: 
+Antal runder(vælg fra liste?) 
+Deck(vælg fra liste) 
+
+indsæt runde: 
+Turnering (vælg fra åbne turneringer)
+(evt modstander??) 
+Egne wins(0-1-2)
+Modstanders wins(0-1-2)
+
+"luk turnering" knap
+
+Se stats: 
+winrate

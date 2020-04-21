@@ -16,27 +16,32 @@ session_start();
   <body>
 <?php
 require 'navbar.php';
-require 'baglogin.php';
+
 ?>
+
   <div class="container">
     <div class="row">
       <div class="col-sm">
 
 
-        One of three columns
+        <!--kolonne nr 1 -->
       </div>
 
       <div class="col-sm-4">
+        <!--kolonne nr 2 -->
+        <h3>Log ind</h3>
+        <br>
 
         <form method="post">
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label for="exampleInputEmail1">Brugernavn:</label>
             <input type="text" name="brugernavn" class="form-control" id="Brugernavn" placeholder="Brugernavn">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="exampleInputPassword1">Password:</label>
             <input type="password" name="password" class="form-control" id="Password" placeholder="Password">
           </div>
+          <?php require 'baglogin.php'; ?>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
@@ -50,7 +55,7 @@ Har du ikke en bruger? <a class="btn btn-primary" href="opretbruger.php" role="b
       <div class="col-sm">
 
 
-        One of three columns
+        <!--kolonne nr 3 -->
       </div>
     </div>
   </div>

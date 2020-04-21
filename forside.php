@@ -1,5 +1,2 @@
-<?php
 
-echo "forside";
-
- ?>
+<?php echo "forskert forside"; ?>
