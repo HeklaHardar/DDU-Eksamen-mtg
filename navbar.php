@@ -8,20 +8,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="">Indsæt<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="">Min profil<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Enkelt Match</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="Decklister.php">Decklister</a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Enkelt match</a>
+      </li>
+      <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Turnering
+          Turneringer
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Alle turneringer</a>
+          <a class="dropdown-item" href="#">Åbne turneringer</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Ny turnering</a>
         </div>
       </li>
 

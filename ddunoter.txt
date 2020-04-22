@@ -6,6 +6,8 @@ Opret decklist (Deckid, decknavn, tekstfelt til kort)
 
 Start turnering 
 Form: 
+Navn:
+Format: (vælg fra liste)
 Antal runder(vælg fra liste?) 
 Deck(vælg fra liste) 
 
@@ -19,3 +21,16 @@ Modstanders wins(0-1-2)
 
 Se stats: 
 winrate
+
+Turneringsoversigt-siden:
+Liste over turneringer (m resultater) 
+mulighed for at klikke på turneringer, og se detaljer -> bestemt-turnering side
+"ny turnering knap" -> opret turnering side 
+
+
+
+
+Min profil:
+Winrate generelt
+
+Winrate pr format / pr deck?     
