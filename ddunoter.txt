@@ -33,4 +33,18 @@ mulighed for at klikke på turneringer, og se detaljer -> bestemt-turnering side
 Min profil:
 Winrate generelt
 
-Winrate pr format / pr deck?     
+Winrate pr format / pr deck?   
+
+
+        <div>
+          <label for="Format">Format:</label>
+          <select id="Format" class="form-control">
+            <?php do {
+              ?> <option><?php echo $hentformat_result['format']?></option> <?php
+            } while ($hentformat_result);
+
+
+
+            ?>
+          </select>
+        </div>  

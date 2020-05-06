@@ -15,9 +15,10 @@ session_start();
   </head>
   <body>
 <?php
+require 'dbconnect.php';
 require 'logincheck.php';
 require 'navbar.php';
-require 'bagvisdeck.php';
+require 'bagturneringsliste.php';
 ?>
 
 <div class="container">
@@ -27,32 +28,50 @@ require 'bagvisdeck.php';
       <!--kolonne nr 1 -->
     </div>
 
-    <div class="col-sm-8" >
+    <div class="col-sm-8">
       <!--kolonne nr 2 -->
-      <h1><?php echo $hentdeckinfo_result['decknavn']; ?></h1>
-      <h2 class="text-muted"><?php echo $hentdeckinfo_result['Format']; ?></h2>
-decks decks lister
-her kan du se alle dine decks
+      <h1>Turneringsliste</h1>
+      <br>
+      Se alle turneringer
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Event</th>
+            <th scope="col">Dato</th>
+            <th scope="col">Sted</th>
+            <th scope="col">Format</th>
+            <th scope="col">Deck</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
 
-      <form action="visdeck.php?id=<?php echo $hentdeckinfo_result['deckid']; ?>" method="POST">
+      <?php
+      if ($hentturn_result) {
+        do {
 
+          $hentnavn="SELECT decknavn FROM mtgstats.decks WHERE decks.deckid='$hentturn_result[Deck]'";
+          $hentnavn_query=mysqli_query($dbconnect, $hentnavn);
+          $hentnavn_result=mysqli_fetch_assoc($hentnavn_query);
 
-        <div class="form-group">
-            <label for="Main"><h5>Mainboard</h5></label>
-            <textarea rows="20" class="form-control" name="Main" ><?php echo $hentdeckinfo_result['Mainboard']?></textarea>
-        </div>
-        <div class="form-group">
-            <label for="Side"><h5>Sideboard</h5></label>
-            <textarea rows="10" class="form-control" name="Side" ><?php echo $hentdeckinfo_result['Sideboard']?></textarea>
-        </div>
+      ?>
+          <tr>
+            <td><?php echo $hentturn_result['Turneringsnavn'] ?></td>
+            <td ><?php echo $hentturn_result['Dato'] ?></td>
+            <td><?php echo $hentturn_result['Sted'] ?></td>
+            <td ><?php echo $hentturn_result['Format'] ?></td>
+            <td><?php echo $hentnavn_result['decknavn']; ?></td>
+            <td><a class="btn btn-primary" href="visturnering.php?id=<?php echo $hentturn_result['turneringsid']?>" role="button">Se mere</a></td>
+          </tr>
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">
-                Create
-            </button>
-        </div>
+      <?php
+      } while ($hentturn_result=mysqli_fetch_assoc($hentturn_query));
+      }
+      ?>
 
-    </form>
+        </tbody>
+      </table>
+
       </div>
 
   <div class="col-sm">

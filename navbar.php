@@ -21,10 +21,10 @@
           Turneringer
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Alle turneringer</a>
+          <a class="dropdown-item" href="turneringsliste.php">Alle turneringer</a>
           <a class="dropdown-item" href="#">Åbne turneringer</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Ny turnering</a>
+          <a class="dropdown-item" href="nyturnering.php">Ny turnering</a>
         </div>
       </li>
 

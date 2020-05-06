@@ -17,7 +17,7 @@ session_start();
 <?php
 require 'logincheck.php';
 require 'navbar.php';
-require 'bagvisdeck.php';
+require 'bagnyturnering.php';
 ?>
 
 <div class="container">
@@ -27,32 +27,55 @@ require 'bagvisdeck.php';
       <!--kolonne nr 1 -->
     </div>
 
-    <div class="col-sm-8" >
+    <div class="col-sm-8">
       <!--kolonne nr 2 -->
-      <h1><?php echo $hentdeckinfo_result['decknavn']; ?></h1>
-      <h2 class="text-muted"><?php echo $hentdeckinfo_result['Format']; ?></h2>
-decks decks lister
-her kan du se alle dine decks
-
-      <form action="visdeck.php?id=<?php echo $hentdeckinfo_result['deckid']; ?>" method="POST">
-
-
+      <h1>Opret turnering</h1>
+      <br>
+      Opret en turnering,
+      <form method="post">
         <div class="form-group">
-            <label for="Main"><h5>Mainboard</h5></label>
-            <textarea rows="20" class="form-control" name="Main" ><?php echo $hentdeckinfo_result['Mainboard']?></textarea>
-        </div>
-        <div class="form-group">
-            <label for="Side"><h5>Sideboard</h5></label>
-            <textarea rows="10" class="form-control" name="Side" ><?php echo $hentdeckinfo_result['Sideboard']?></textarea>
+          <label for="Turneringsnavn">Turnerings navn:</label>
+          <input type="text" name="Turneringsnavn" class="form-control" id="Turneringsnavn" placeholder="Turneringsnavn" required>
         </div>
 
+          <div class="form-group">
+            <label for="Dato">Dato:</label>
+            <input type="date" id="Dato" name="Dato" required>
+          </div>
+
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">
-                Create
-            </button>
+          <label for="Sted">Sted:</label>
+          <input type="text" name="Sted" class="form-control" id="Sted" placeholder="Sted" required>
         </div>
 
-    </form>
+        <div>
+  <label for="Format">Format:</label>
+  <select id="Format" name="Format" class="form-control">
+    <?php do {
+      ?> <option value="<?php echo $hentformat_result['format']?>"> <?php echo $hentformat_result['format']?></option> <?php
+    } while ($hentformat_result=mysqli_fetch_assoc($hentformat_query));
+    ?>
+  </select>
+</div>
+<div>
+<label for="Deck">Deck:</label>
+<select id="Deck" name="Deck" class="form-control">
+<?php do {
+?> <option value="<?php echo $hentdeck_result['deckid']?>"><?php echo $hentdeck_result['decknavn']?></option>
+ <?php } while ($hentdeck_result=mysqli_fetch_assoc($hentdeck_query));
+?>
+</select>
+</div>
+<br>
+
+<div class="form-group">
+    <button type="submit" class="btn btn-primary">
+        Create
+    </button>
+</div>
+      </form>
+
+
       </div>
 
   <div class="col-sm">

@@ -5,6 +5,7 @@ require("testinput.php");
 if ($_POST) {
   if (ctype_alnum($_POST['brugernavn']) && ctype_alnum($_POST['password1']) && ctype_alnum($_POST['password2'])){
 $brugernavn= test_input($_POST['brugernavn']);
+
 $checkusername="SELECT * FROM brugere WHERE brugernavn = '$brugernavn'";
 $checkusername_query=mysqli_query($dbconnect, $checkusername);
 //Vi beder om data alle rækker fra databasen med samme bruger_navn, og tjekker derefter om der kom nogle rækker.
