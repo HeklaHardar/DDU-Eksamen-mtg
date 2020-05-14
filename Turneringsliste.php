@@ -30,9 +30,24 @@ require 'bagturneringsliste.php';
 
     <div class="col-sm-8">
       <!--kolonne nr 2 -->
-      <h1>Turneringsliste</h1>
-      <br>
-      Se alle turneringer
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <h1>Turneringsliste</h1>
+            <br>
+
+            Se alle turneringer
+          </div>
+          <div class="col-sm">
+            <div class="text-center">
+              <br>
+              <br>
+            <a class="btn btn-primary" href="nyturnering.php" role="button">Ny turnering</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <table class="table table-hover">
         <thead>
           <tr>

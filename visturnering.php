@@ -42,7 +42,7 @@ require 'bagvisturnering.php';
             <h5 class="text-muted">Decknavn:</h5>
           </div>
 
-          <div class="col-sm-8">
+          <div class="col-sm">
             <!--kolonne nr 2 -->
             <h5><?php echo $hentturninfo_result['Dato'];?></h5>
             <h5><?php echo $hentturninfo_result['Sted'];?></h5>
@@ -51,6 +51,9 @@ require 'bagvisturnering.php';
             <br>
 
 
+            </div>
+            <div class="col-sm">
+              <a class="btn btn-primary" href="nyrunde.php?id=<?php echo $_SESSION['turnid']?>" role="button">Ny runde</a>
             </div>
         </div>
       </div>
@@ -78,7 +81,7 @@ require 'bagvisturnering.php';
             <td ><?php echo $hentrunder_result['losses'] ?></td>
             <td><?php echo $hentrunder_result['overtid'] ?></td>
             <td ><?php echo $hentrunder_result['modstanderdeck'] ?></td>
-            <td><a class="btn btn-primary" href="visturnering.php?id=<?php echo $hentturn_result['turneringsid']?>" role="button">Se mere</a></td>
+            <td><a class="btn btn-danger" href="visturnering.php?id=<?php echo $hentturn_result['turneringsid']?>" role="button">Slet</a></td>
           </tr>
 
       <?php

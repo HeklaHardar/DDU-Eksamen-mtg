@@ -8,21 +8,24 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="">Min profil<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="stats.php">Stats<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="Decklister.php">Decklister</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Enkelt match</a>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Decklister
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="Decklister.php">Decklister</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="nydeck.php">Ny deckliste</a>
+        </div>
       </li>
       <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Turneringer
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="turneringsliste.php">Alle turneringer</a>
-          <a class="dropdown-item" href="#">Åbne turneringer</a>
+          <a class="dropdown-item" href="turneringsliste.php">Turneringer</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="nyturnering.php">Ny turnering</a>
         </div>
