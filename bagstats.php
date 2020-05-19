@@ -32,13 +32,20 @@ $hentwins="SELECT wins, losses FROM mtgstats.runder WHERE runder.brugerid='$_SES
 $hentwins_query=mysqli_query($dbconnect, $hentwins);
 $hentwins_result=mysqli_fetch_assoc($hentwins_query);
 
-do {
-  $wins=$wins+$hentwins_result['wins'];
-  $losses=$losses+$hentwins_result['losses'];
-} while ($hentwins_result=mysqli_fetch_assoc($hentwins_query));
+if ($hentwins_result) {
+  do {
+    $wins=$wins+$hentwins_result['wins'];
+    $losses=$losses+$hentwins_result['losses'];
+  } while ($hentwins_result=mysqli_fetch_assoc($hentwins_query));
+}
 
 $games=$wins+$losses;
+
+if ($games>0) {
 $winrate=round(($wins/$games)*100,2);
+}else {
+$winrate=0;
+}
 
 // FORMATER
 $hentformat="SELECT * FROM mtgstats.formater";

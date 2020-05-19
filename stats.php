@@ -67,8 +67,8 @@ require 'bagstats.php';
              <h1><?php echo $losses; ?></h1>
           </div>
           <div class="card-body">
-            <h5 class="card-title">Runder tabt</h5>
-            <p class="card-text">Du har tabt <?php echo $losses; ?> runder i alt!</p>
+            <h5 class="card-title">Games tabt</h5>
+            <p class="card-text">Du har tabt <?php echo $losses; ?> games i alt!</p>
           </div>
         </div>
         <br>
@@ -131,8 +131,8 @@ require 'bagstats.php';
                  <h1><?php echo $wins; ?></h1>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Runder vundet</h5>
-                <p class="card-text">Du har vundet <?php echo $wins; ?> runder i alt!</p>
+                <h5 class="card-title">Games vundet</h5>
+                <p class="card-text">Du har vundet <?php echo $wins; ?> games i alt!</p>
               </div>
             </div>
             <br>
